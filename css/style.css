@@ -14,7 +14,7 @@
 :root {
     --bg-color: #fdfdfd;
     --text-color: #333;
-    --main-color: #296914;
+    --main-color: #754ef9;
     --white-color: #fdfdfd;
     --shadow-color: rgba(0, 0, 0, 0.2);
 }
@@ -559,6 +559,19 @@ span {
 .contact form .btn {
     margin-top: 2rem;
     cursor: pointer;
+}
+
+.message {
+    position: absolute;
+    font-size: 2rem;
+}
+
+.color-blue{
+    color: hsl(207, 56%, 45%);
+}
+
+.color-red{
+    color: hsl(4, 71%, 50%);
 }
 
 .footer {

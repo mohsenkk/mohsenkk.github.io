@@ -70,3 +70,25 @@ ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
 ScrollReveal().reveal('.home-img img, .services-container, .portfolio-box, .testimonial-wrapper, .concat form', { origin: 'bottom' });
 ScrollReveal().reveal('.home-content h1, .about-img img', { origin: 'left' });
 ScrollReveal().reveal('.home-content h3, .home-content p, .about-content', { origin: 'right' });
+
+const contactForm = document.getElementById('contact-form'),
+      contactName = document.getElementById('contact-name'),
+      contactEmail = document.getElementById('contact-email'),
+      contactNumber = document.getElementById('contact-number'),
+      contactText = document.getElementById('contact-text'),
+      contactTextarea = document.getElementById('contact-textarea'),
+      contactMessage = document.getElementById('contact-message')
+
+const sendEmail = (e) =>{
+    e.preventDefault();
+
+    if(contactName.value === '' || contactEmail.value === '' || contactNumber.value === '' || contactText.value === '' || contactTextarea.value === ''){
+        contactMessage.classList.remove('color-blue')
+        contactMessage.classList.add('color-red')
+
+        contactMessage.textContent = 'Write all the input field!'
+    }else{
+        emailjs.sendForm('','','','')
+    }
+}
+contactForm.addEventListener('submit', sendEmail)
