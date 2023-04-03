@@ -72,23 +72,31 @@ ScrollReveal().reveal('.home-content h1, .about-img img', { origin: 'left' });
 ScrollReveal().reveal('.home-content h3, .home-content p, .about-content', { origin: 'right' });
 
 const contactForm = document.getElementById('contact-form'),
-      contactName = document.getElementById('contact-name'),
+      contactFullName = document.getElementById('contact-full-name'),
       contactEmail = document.getElementById('contact-email'),
-      contactNumber = document.getElementById('contact-number'),
-      contactText = document.getElementById('contact-text'),
-      contactTextarea = document.getElementById('contact-textarea'),
-      contactMessage = document.getElementById('contact-message')
+      contactMobileNumber = document.getElementById('contact-mobile-number'),
+      contactEmailSubject = document.getElementById('contact-email-subject'),
+      contactYourMassage = document.getElementById('contact-your-massage'),
+      contactMassage = document.getElementById('contact-massage')
 
 const sendEmail = (e) =>{
-    e.preventDefault();
+    e.preventDefault()
 
-    if(contactName.value === '' || contactEmail.value === '' || contactNumber.value === '' || contactText.value === '' || contactTextarea.value === ''){
-        contactMessage.classList.remove('color-blue')
-        contactMessage.classList.add('color-red')
+    if(contactFullName.value === '' || contactEmail.value === '' || contactMobileNumber.value === '' ||
+    contactEmailSubject.value === '' || contactYourMassage.value === ''){
+        contactMassage.classList.remove('color-blue')
+        contactMassage.classList.add('color-red')
 
-        contactMessage.textContent = 'Write all the input field!'
+        contactMassage.textContent = 'Write all the input fields!'
     }else{
-        emailjs.sendForm('','','','')
+        emailjs.sendForm('service_y0lrmhl', 'template_44r4a7f', '#contact-form', 'CCd6ZHReS_QlcAmC8')
+        .then(() =>{
+            contactMassage.classList.add('color-blue')
+            contactMassage.textContent = 'Message sent.'
+            setTimeout(() =>{
+                contactMassage.textContent = ''
+            }, 5000)
+        })
     }
 }
 contactForm.addEventListener('submit', sendEmail)

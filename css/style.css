@@ -8,19 +8,19 @@
     border: none;
     outline: none;
     scroll-behavior: smooth;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 :root {
     --bg-color: #fdfdfd;
     --text-color: #333;
-    --main-color: #754ef9;
+    --main-color: #00abf0;
     --white-color: #fdfdfd;
     --shadow-color: rgba(0, 0, 0, 0.2);
 }
 
 .dark-mode {
-    --bg-color: #0b061f;
+    --bg-color: #081b29;
     --text-color: #fdfdfd;
     --shadow-color: rgba(0, 0, 0, 0.7);
 }
@@ -272,9 +272,9 @@ section {
 
 .home-img img {
     position: absolute;
-    top: 0;
+    top: 23.9%;
     right: 0;
-    left: 47.5%;
+    left: 60%;
     bottom: 0;
     /* height: 100%;
     width: 100%; */
@@ -556,22 +556,21 @@ span {
     resize: none;
 }
 
-.contact form .btn {
-    margin-top: 2rem;
-    cursor: pointer;
+.contact_massage{
+    font-size: 2rem;
 }
 
-.message {
-    position: absolute;
-    font-size: 2rem;
+.color-red{
+    color: hsl(4, 71%, 50%);
 }
 
 .color-blue{
     color: hsl(207, 56%, 45%);
 }
 
-.color-red{
-    color: hsl(4, 71%, 50%);
+.contact form .btn {
+    margin-top: 2rem;
+    cursor: pointer;
 }
 
 .footer {
